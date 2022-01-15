@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container {
+            background-color: rgb(226, 173, 102);
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        input {
+            margin: 20px;
+        }
+    </style>
+    <title>Calcular Notas</title>
+</head>
+
+<body>
+
+
+    <div id="container">
+        <div>
+            <h2>Calculo Notas de Alguns Alunos</h2>
+
+            <hr class="hr">
+
+            <div class="alinhar">
+
+                <label for="">nota1:<input type="number" name="" id="aluno"></label><br />
+
+            </div>
+
+        </div>
+        <!-- botão com evento de click -->
+        <button onclick="calcular()">Calcular Valor</button><br />
+        <label for="">Total de Horas Viajadas:<div class="res"></div></label>
+    </div>
+
+
+    <script>
+            let lista = [];
+            let soma = 0;
+        function calcular() {
+
+            let valor = document.querySelector('#aluno').value;
+            lista.push(valor);
+            console.log(lista);
+        
+        }
+        for(i in lista){
+            console.log(i)
+        }
+    
+    </script>
+</body>
+
+</html>

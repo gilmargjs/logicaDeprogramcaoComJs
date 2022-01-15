@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container {
+            background-color: rgb(226, 173, 102);
+            width: 500px;
+            height: 350px;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        .sub-container {
+            display: flex;
+
+        }
+
+        .formulario {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+
+        }
+
+        .formulario input {
+            width: 120px;
+            height: 20px;
+        }
+
+        .resp-medicamento,
+        .resp-promocao,
+        .resp-desconto {
+            font-weight: bold;
+
+        }
+
+        button {
+            background-color: rgb(139, 139, 119);
+            border-radius: 5px;
+        }
+
+        .resposta {
+            display: none;
+            background-color: rgb(240, 238, 147);
+            height: 250px;
+            font-size: 17px;
+            margin: 15px;
+        }
+    </style>
+    <title>Farmacia JS</title>
+</head>
+
+<body>
+
+
+    <div id="container">
+        <h1>FARMACIA JS</h1>
+        <div class="sub-container">
+            <div class="formulario">
+                Medicamento: <input type="text" id="produto"><br>
+                Preço R$: <input type="number" name="" id="preco"><br>
+                Quantidade Produto: <input type="number" name="" id="quantPro"><br>
+                <button id="calcular">Mostrar Promoção</button><br>
+
+            </div>
+            <div class="resposta">
+                <p class="resp-medicamento"></p>
+                <p class="resp-promocao"></p>
+                <p class="resp-desconto"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function calculando() {
+            let medicamento = document.querySelector('#produto').value.toUpperCase()
+            let preco = document.querySelector('#preco').value
+            let quantidadeProduto = document.querySelector('#quantPro').value
+            if (quantidadeProduto > 1) {
+                document.querySelector('.resposta').style.display = 'block';
+
+                precoFinal = Math.floor(preco) * quantidadeProduto
+
+                desconto = preco % 2 * quantidadeProduto
+
+                document.querySelector('.resp-promocao').textContent = `Levando acima de 2 ${medicamento}   
+                sua compra fica por R$ ${precoFinal.toFixed(2)}`;
+
+                document.querySelector('.resp-desconto').textContent = `O seu desconto seŕa R$ ${desconto.toFixed(2)}`;
+
+            } else {
+
+                document.querySelector('.resposta').style.display = 'block';
+                precoFinal = preco * quantidadeProduto
+                document.querySelector('.resp-promocao').textContent =
+                    `O valor Medicamento ${medicamento} é ${precoFinal}`;
+
+            }
+            document.querySelector('.resp-medicamento').textContent = medicamento;
+        }
+        calcular.addEventListener('click', calculando);
+    </script>
+</body>
+
+</html>

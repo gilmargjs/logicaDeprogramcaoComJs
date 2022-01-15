@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container {
+            background-color: rgb(226, 173, 102);
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        input {
+            margin: 20px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Programa Olá Voçê</h1>
+        <input type="text" name="" id="nome">
+        <input type="button" value="Mostrar" id="mostrar">
+        <p id="resposta"></p>
+
+    </div>
+    <script>
+        //decalarar a função mostrar olá
+        function mostrarOla() {
+            //obtem o id nome
+            var nome = document.querySelector('#nome').value;
+
+            //mostrar resposta
+            document.querySelector('#resposta').textContent = `Olá Seu Nome é   ${nome.toUpperCase()}`;
+        }
+        mostrar.addEventListener('click', mostrarOla)
+    </script>
+</body>
+
+</html>

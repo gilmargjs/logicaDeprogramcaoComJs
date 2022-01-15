@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            width: 500px;
+            height: 400px;
+            background-color: rgb(153, 194, 136);
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: rgb(224, 97, 23);
+            color: #fff;
+        }
+        input{
+            display: flex;
+            width: 140px;
+            
+        }
+        button{
+            margin: 20px 0 20px 0;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h2>Calculo de Um Jantar</h2>
+            <div class="alinhar">
+                <label for="">Valor por Pessoa:<input type="number" name="" id="preco"> </label><br />
+                <label for="">Quantidade de Pessoas:<input type="number" name="" id="pessoas"></label>
+            </div>
+        </div>
+
+        <button onclick="calcular()">Calcular Valor</button><br />
+        <label for="">Valor a Pager:<div class="res"></div></label>
+    </div>
+    <script>
+        function calcular() {
+            let precoPessoa = Number(document.querySelector('#preco').value);
+            let quantidadePessoas = Number(document.querySelector('#pessoas').value);
+            let garcon = 1.10;
+            total = precoPessoa * quantidadePessoas
+            totalGeral = total * garcon
+            document.querySelector('.res').innerHTML = `O Valor Total do Jantar Foi: ${totalGeral.toFixed(2)} `
+        }
+    </script>
+</body>
+
+</html>

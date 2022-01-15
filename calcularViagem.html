@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            width: 500px;
+            height: 400px;
+            background-color: rgb(136, 194, 177);
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            border:2px solid #000;
+
+        }
+
+        button {
+            background-color: rgb(224, 97, 23);
+            color: #fff;
+        }
+
+        .alinhar{
+        }
+
+        input{
+            display: flex;
+            width: 140px;
+            
+        }
+        button{
+            margin: 20px 0 20px 0;
+        }
+        .hr{
+            width: 100%;
+            height: 5px;
+            
+        }
+    </style>
+    <title>Calcular Viagem</title>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h2>Calculo os Gastos de UMa Viagem</h2>
+            <p>Esta Viagem Tem a Duração de 2 Dias e 5 Horas</p>
+            <hr class="hr">
+            <div class="alinhar">
+                <label for="">Quantidade de Dias:<input type="number" name="" id="dias"> </label><br />
+                <label for="">Quantidade de Horas:<input type="number" name="" id="horas"></label>
+            </div>
+        </div>
+        <!-- botão com evento de click -->
+        <button onclick="calcular()">Calcular Valor</button><br />
+        <label for="">Total de Horas Viajadas:<div class="res"></div></label>
+    </div>
+    <script>
+        function calcular() {
+            //pegando o valor do input dos dias
+            let quantidadeDias = Number(document.querySelector('#dias').value);
+            //pegando o valor do input das horas
+            let quantidadeHoras = Number(document.querySelector('#horas').value);
+            //soma dos totais das horas
+            totalHoras = quantidadeDias * 24 + quantidadeHoras
+
+            //izibindo o valor na tela
+            document.querySelector('.res').innerHTML = `Você viajou: ${totalHoras} horas`
+        }
+    </script>
+</body>
+
+</html>

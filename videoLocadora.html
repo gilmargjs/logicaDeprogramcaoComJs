@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container {
+            background-color: rgb(226, 173, 102);
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        input {
+            margin: 20px;
+        }
+    </style>
+    <title>video locadora js</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Video Locadora JS</h1>
+        <label for="">Titulo do Filme:<input type="text" id="titulo"></label></br>
+        <label for="">Duração(min):<input type="number" name="" id="tempo"></label></br>
+        <input type="button" value="converterHorasMinutos" id="converterHorasMinutos">
+        <p id="resposta-titulo"></p>
+        <p id="resposta-minutos"></p>
+    </div>
+    <script>
+        function converter() {
+            var titulo = document.querySelector("#titulo").value
+            var duracao = document.querySelector("#tempo").value
+            //dividindo a duração por 60(minutos em uma hora) e arreondando para baixo ficando o inteiro 
+            var horas = Math.floor(duracao / 60);
+            //sobra que fica da divisão inteira (que é os minutos)
+            var minutos = tempo % 60;
+            document.querySelector('#resposta-titulo').textContent = titulo
+            document.querySelector('#resposta-minutos').textContent = `${horas} horas e ${minutos} minutos`
+
+        }
+
+        converterHorasMinutos.addEventListener('click', converter);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container {
+            background-color: rgb(226, 173, 102);
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        input{
+            margin: 20px;
+        }
+       #res-entrada,#res-parcelas,#res-promocao{
+           font-weight: bold;
+       }
+    </style>
+    <title>Revenda de Veiculos</title>
+</head>
+
+<body>
+    <div id="container">
+       <strong> <h1>Revenda de Veiculos JS</h1></strong>
+
+        Veiculo: <input type="text" id="veiculo"><br>
+        Preço: <input type="number" name="" id="preco"><br>
+
+        <input type="button" value="Ver Promoção" id="promocao">
+
+        <p id="res-promocao"></p>
+        <p id="res-entrada"></p>
+        <p id="res-parcelas"></p>
+    </div>
+    <script>
+        function calcularParcelas(){
+            var veiculo = document.querySelector('#veiculo').value;
+            var preco = document.querySelector('#preco').value;
+            var entrada = preco * 0.50;
+            var parcelas = (preco * 0.50) / 12;
+            document.querySelector('#res-promocao').textContent = `Promoção: ${veiculo}`;
+            document.querySelector('#res-entrada').textContent = `Entrada de R$: ${entrada}`;
+            document.querySelector('#res-parcelas').textContent = `+ 12x de R$: ${parcelas.toFixed(2)}`;
+        }
+
+        promocao.addEventListener('click',calcularParcelas);
+    </script>
+</body>
+
+</html>

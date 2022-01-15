@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container {
+            background-color: rgb(226, 173, 102);
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        input {
+            margin: 20px;
+        }
+    </style>
+    <title>Restaurante</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Restaurante JS</h1>
+
+        Buffer por Quilo R$: <input type="number" name="" id="valorQuilo"><br>
+        Consumo do Cliente(gr): <input type="number" name="" id="consumo"><br>
+        <input type="button" value="Calcular Preço" id="calcular">
+        <p id="apagar"></p>
+    </div>
+
+    <script>
+        function calculoPessoa(){
+            var inquilo = document.querySelector('#valorQuilo');
+            var inconsumo = document.querySelector('#calcular');
+            var quilo = Number(inquilo);
+            var consumo = Number(inconsumo);
+            var valorPagar = (quilo / 1000)*consumo;
+            document.querySelector('#apagar').textContent = valorPagar
+        
+        }   
+        calcular.addEventListener('click',calculoPessoa);
+    </script>
+</body>
+
+</html>
